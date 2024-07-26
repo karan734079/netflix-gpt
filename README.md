@@ -1,7 +1,7 @@
 # Netflix-GPT
 - Create React App
 - configure TailwindCSS
-- 
+- configure github
 
 # Features
 - Log In/Sign Up
