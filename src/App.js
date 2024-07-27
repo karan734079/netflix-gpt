@@ -1,10 +1,8 @@
-import './App.css';
+import Body from './components/Body';
 
 function App() {
   return (
-    <div className="font-sans text-3xl flex justify-center font-bold text-orange-600">
-      <p>hello react</p>
-    </div>
+    <Body />
   );
 }
 
