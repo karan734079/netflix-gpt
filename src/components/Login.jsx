@@ -1,54 +1,56 @@
-import React, { useState } from "react";
 import Header from "./Header";
+import { auth, googleProvider, signInWithPopup } from "../utils/firebase";
+import { updateProfile } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const [isSignInForm, setisSignInForm] = useState(true);
+  const navigate = useNavigate();
 
-  const toggleSignInForm = () => {
-    setisSignInForm(!isSignInForm);
+  const handleGoogleLogin = async () => {
+    try {
+      const result = await signInWithPopup(auth, googleProvider);
+      const user = result.user;
+      if (user) {
+        updateProfile(user, {
+          displayName: user.displayName, photoURL: user.photoURL,
+        }).then(() => {
+          navigate('/browse');
+        }).catch((error) => {
+         navigate('/error')
+        });
+      } else {
+        navigate('/');
+      }
+
+    } catch (error) {
+      navigate('/error');
+    }
   };
+
   return (
-    <div>
+    <div style={{
+      backgroundImage: 'url("https://assets.nflxext.com/ffe/siteui/vlv3/21a8ba09-4a61-44f8-8e2e-70e949c00c6f/6678e2ea-85e8-4db2-b440-c36547313109/IN-en-20240722-POP_SIGNUP_TWO_WEEKS-perspective_WEB_3457a8b1-284d-4bb5-979e-2a2e9bb342b3_large.jpg")',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+      height: '100vh',
+      width: '100%',
+      position: 'relative',
+    }}>
       <Header />
-      <div className="absolute">
-        <img
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/21a8ba09-4a61-44f8-8e2e-70e949c00c6f/6678e2ea-85e8-4db2-b440-c36547313109/IN-en-20240722-POP_SIGNUP_TWO_WEEKS-perspective_WEB_3457a8b1-284d-4bb5-979e-2a2e9bb342b3_large.jpg"
-          alt="logo"
-        />
-      </div>
       <form
-        action=""
-        className="w-3/12 absolute  bg-black  p-12 my-36 mx-auto right-0 left-0 text-white bg-opacity-80"
+        onSubmit={(e) => e.preventDefault()}
+        className="w-3/12 absolute  bg-black  p-20 pb-8 my-60 mx-auto right-0 left-0 text-white bg-opacity-70 justify-center"
       >
-        <h1 className="text-left text-3xl font-bold py-4">
-          {isSignInForm ? "Sign In" : "Sign Up"}
-        </h1>
-        {!isSignInForm && <input
-          type="text"
-          placeholder="Full Name"
-          className="p-3 my-2 w-full font-bold text-sm ring-1 ring-slate-400 rounded-[4px] bg-black bg-opacity-80"
-        />}
-        <input
-          type="email"
-          placeholder="Email or mobile number"
-          className="p-3 my-2 w-full font-bold text-sm ring-1 ring-slate-400 rounded-[4px] bg-black bg-opacity-80"
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          className="p-3 my-2 w-full  ring-1 font-bold ring-slate-400 text-sm  rounded-[4px] bg-black bg-opacity-80"
-        />
+        <div className='absolute px-6 -my-16'>
+          <img className="w-44" src="https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png" alt="logo" srcset="" />
+        </div>
         <button
-          type="submit"
-          className="p-2 my-2 bg-red-700 w-full font-bold rounded-[4px] cursor-pointer"
+          onClick={handleGoogleLogin}
+          className="p-2 my-2 bg-red-700 w-full font-bold rounded-[4px] text-white cursor-pointer"
         >
-          {isSignInForm ? "Sign In" : "Sign Up"}
+          Sign In with Google
         </button>
-        <p className="py-4 cursor-pointer" onClick={toggleSignInForm}>
-          {isSignInForm
-            ? "New To Netflix? Sign Up now."
-            : "Already have an Account? Sign In now."}
-        </p>
       </form>
     </div>
   );

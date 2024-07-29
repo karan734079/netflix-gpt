@@ -3,8 +3,17 @@
 - configure TailwindCSS
 - configure github
 - Header
-- Login Form
-- Sign Up
+- Routing
+- Login form using Google
+- useRef Hook
+- Firebase Setup
+- Deploying our app to production
+- implement Sign In user api with Google
+- Created our Redux Store with userSlice
+- implemented Sign Out
+- update Profile
+- Fetch Movies from TMDB
+
 
 # Features
 - Log In/Sign Up
