@@ -13,6 +13,10 @@
 - implemented Sign Out
 - update Profile
 - Fetch Movies from TMDB
+- Add functionality to show the Profile Photo on the Browse Section
+- BugFix: If the User not Loged In so redirected back to the Log In page and if the User not Sign Outed so redirected back to the Browse Page
+- Unsubscribed to the onAuthStateChanged Callback function
+- Add Constants File in Utils
 
 
 # Features
