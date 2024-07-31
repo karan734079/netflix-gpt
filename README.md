@@ -17,6 +17,18 @@
 - BugFix: If the User not Loged In so redirected back to the Log In page and if the User not Sign Outed so redirected back to the Browse Page
 - Unsubscribed to the onAuthStateChanged Callback function
 - Add Constants File in Utils
+- Register TMDB API & Create a App & Get a Access Token
+- Go To Documentation and Get Data from TMDB Now Playing Movies List API
+- Then ADD this API to your application
+- Custom Hook for Now Playing Movie List
+- Custom Hook for Trailer Video 
+- Custom Hook for Authentication 
+- Update Store with Movie Data
+- planning for Main Container ans Secondary container
+- Fetch Data for Trailer Video
+- Update Store with Trailer Video
+- Embedded the Youtube Video
+- Make it Autoplay and Mute and Add TailwindCss for Main Container to Look Awesome
 
 
 # Features

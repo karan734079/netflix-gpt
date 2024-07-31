@@ -32,7 +32,7 @@ const Login = () => {
         className="w-3/12 absolute  bg-black  p-20 pb-8 my-60 mx-auto right-0 left-0 text-white bg-opacity-70 justify-center"
       >
         <div className="absolute px-6 -my-16">
-          <img className="w-44" src={LOGO} alt="logo" srcset="" />
+          <img className="w-44" src={LOGO} alt="logo" />
         </div>
         <button
           onClick={handleGoogleLogin}
