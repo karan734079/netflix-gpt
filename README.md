@@ -29,6 +29,9 @@
 - Update Store with Trailer Video
 - Embedded the Youtube Video
 - Make it Autoplay and Mute and Add TailwindCss for Main Container to Look Awesome
+- Add Secondary Container 
+- Add Movie Lists and Movie Cards
+- Add USePopularMovies and useTopRatedMovies and useNowPlayingMovies and useTrendingMovies  and useUpComingMovies Hooks for diff movie Lists Api
 
 
 # Features

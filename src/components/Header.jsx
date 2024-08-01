@@ -18,7 +18,7 @@ const Header = () => {
   useAuthenticationHandle();
 
   return (
-    <div className="absolute w-screen px-8 py-2 bg-gradient-to-tr from-black z-10 flex justify-between">
+    <div className="absolute w-full px-8 py-2 bg-gradient-to-bl from-black z-10 flex justify-between">
       <img
         className="w-48"
         src={LOGO}
@@ -26,10 +26,10 @@ const Header = () => {
       />
       {user && (
         <div className="flex p-2">
-          <img className="h-12 w-12 my-2" src={user.photoUrl} alt="usericon" />
+          <img className="h-12 w-12 my-2 rounded-full" src={user.photoUrl} alt="usericon" />
           <button
             onClick={handleSignOut}
-            className=" ml-2 font-bold rounded-[4px] text-white text-xl cursor-pointer hover:text-red-700"
+            className=" ml-2 font-bold rounded-[4px] text-white text-lg cursor-pointer hover:text-red-700"
           >
             Sign Out
           </button>
