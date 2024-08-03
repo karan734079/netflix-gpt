@@ -32,7 +32,9 @@
 - Add Secondary Container 
 - Add Movie Lists and Movie Cards
 - Add USePopularMovies and useTopRatedMovies and useNowPlayingMovies and useTrendingMovies  and useUpComingMovies Hooks for diff movie Lists Api
-
+- GPT Search Page
+- Gpt Search Bar
+- Added a Multi-language Feature in Our App
 
 # Features
 - Log In/Sign Up
