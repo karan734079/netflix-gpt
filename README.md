@@ -1,4 +1,5 @@
 # Netflix-GPT
+
 - Create React App
 - configure TailwindCSS
 - configure github
@@ -35,6 +36,14 @@
 - GPT Search Page
 - Gpt Search Bar
 - Added a Multi-language Feature in Our App
+- Integrate Gemini Api for the Movie Suggestions
+- Show the Search Bar and Movie Suggestions on the GptSearch page 
+- Make our Api Keys encoded using .env File
+- Apply the Concept of Memoization on the Custom Hooks
+- Add Multiple movieNames and movieResults on the Redux store for the State Management
+- Made Our Whole App Responsive 
+
+# THE END
 
 # Features
 - Log In/Sign Up

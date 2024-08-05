@@ -11,7 +11,7 @@ import { useSelector } from "react-redux";
 
 const Browse = () => {
   const showGptSearch = useSelector((store) => store.gpt.showGptSearch);
-  
+
   useNowPlayingMovies();
   useTrendingMovies();
   usePopularMovies();
@@ -19,7 +19,7 @@ const Browse = () => {
   useTopRatedMovies();
 
   return (
-    <div>
+    <div className="relative min-h-screen bg-gray-900 text-white">
       <Header />
       {showGptSearch ? (
         <GptSearch />

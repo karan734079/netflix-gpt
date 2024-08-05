@@ -17,7 +17,7 @@ const Login = () => {
   return (
     <div
       style={{
-        backgroundImage: `${BackgroundImage}`,
+        backgroundImage:`${BackgroundImage}`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
@@ -27,20 +27,22 @@ const Login = () => {
       }}
     >
       <Header />
-      <form
-        onSubmit={(e) => e.preventDefault()}
-        className="w-3/12 absolute  bg-black  p-20 pb-8 my-60 mx-auto right-0 left-0 text-white bg-opacity-70 justify-center"
-      >
-        <div className="absolute px-6 -my-16">
-          <img className="w-44" src={LOGO} alt="logo" />
-        </div>
-        <button
-          onClick={handleGoogleLogin}
-          className="p-2 my-2 bg-red-700 w-full font-bold rounded-[4px] text-white cursor-pointer"
+      <div className="flex items-center justify-center h-full">
+        <form
+          onSubmit={(e) => e.preventDefault()}
+          className="bg-black bg-opacity-70 p-6 md:p-8 lg:p-10 text-white rounded-lg w-full max-w-sm"
         >
-          Sign In with Google
-        </button>
-      </form>
+          <div className="flex justify-center mb-4">
+            <img className="w-36 sm:w-44 md:w-52" src={LOGO} alt="logo" /> {/* Responsive logo size */}
+          </div>
+          <button
+            onClick={handleGoogleLogin}
+            className="w-full bg-red-700 px-4 py-2 font-bold rounded-md text-white cursor-pointer hover:bg-red-800"
+          >
+            Sign In with Google
+          </button>
+        </form>
+      </div>
     </div>
   );
 };

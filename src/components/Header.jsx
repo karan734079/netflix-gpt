@@ -29,34 +29,55 @@ const Header = () => {
   };
 
   return (
-    <div className="absolute w-full px-8 py-2 bg-gradient-to-b from-black z-10 flex justify-between">
-      <img className="w-48" src={LOGO} alt="logo" />
+    <div className="absolute top-0 left-0 right-0 px-4 py-2 bg-gradient-to-b from-black z-10 flex flex-col md:flex-row items-center justify-between">
+      {/* Logo */}
+      <img className="w-32 md:w-48" src={LOGO} alt="logo" />
+
+      {/* User Info and Actions */}
       {user && (
-        <div className="flex p-2">
-          {showGptSearch && <select className="p-1  bg-black text-white m-2 rounded-md" onChange={handleLanguageChange}>
-            {SUPPORTED_LANGUAGES.map((lang) => (
-              <option className="text-white" key={lang.identifier} value={lang.identifier}>
-                {lang.name}
-              </option>
-            ))} 
-          </select>}
-          <button
-            className="bg-red-700 px-6 m-3 rounded-md text-white font-bold text-lg hover:bg-red-800"
-            onClick={handleGptSearch}
-          >
-            {showGptSearch ? "Back To Home" : "GPT Search"}
-          </button>
-          <img
-            className="h-12 w-12 my-2 rounded-full"
-            src={user.photoUrl}
-            alt="usericon"
-          />
-          <button
-            onClick={handleSignOut}
-            className="text-white font-bold text-lg hover:text-red-600 ml-2"
-          >
-            Sign Out
-          </button>
+        <div className="flex flex-col md:flex-row items-center md:space-x-4 space-y-2 md:space-y-0">
+          {/* Actions Wrapper */}
+          <div className="flex flex-col md:flex-row items-center space-y-2 md:space-x-4 md:space-y-0">
+            {/* Language Selector */}
+            {showGptSearch && (
+              <select
+                className="p-1 bg-black text-white rounded-md"
+                onChange={handleLanguageChange}
+              >
+                {SUPPORTED_LANGUAGES.map((lang) => (
+                  <option className="text-white" key={lang.identifier} value={lang.identifier}>
+                    {lang.name}
+                  </option>
+                ))}
+              </select>
+            )}
+
+            {/* GPT Search Button */}
+            <button
+              className="bg-red-700 px-4 md:px-6 py-2 rounded-md text-white font-bold text-sm md:text-lg hover:bg-red-800 transition duration-200"
+              onClick={handleGptSearch}
+            >
+              {showGptSearch ? "Back To Home" : "GPT Search"}
+            </button>
+          </div>
+
+          {/* User Profile and Sign Out */}
+          <div className="flex items-center space-x-2 md:space-x-4">
+            {/* User Profile */}
+            <img
+              className="h-10 w-10 md:h-12 md:w-12 rounded-full"
+              src={user.photoUrl}
+              alt="usericon"
+            />
+
+            {/* Sign Out Button */}
+            <button
+              onClick={handleSignOut}
+              className="text-white font-bold text-sm md:text-lg hover:text-red-600 transition duration-200"
+            >
+              Sign Out
+            </button>
+          </div>
         </div>
       )}
     </div>
